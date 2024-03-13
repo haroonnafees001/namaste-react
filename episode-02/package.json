@@ -1,0 +1,26 @@
+{
+  "name": "namaste-package",
+  "version": "1.0.0",
+  "description": "this is my first package in namaste react series",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haroonnafees001/namaste-react.git"
+  },
+  "author": "haroon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haroonnafees001/namaste-react/issues"
+  },
+  "homepage": "https://github.com/haroonnafees001/namaste-react#readme",
+  "devDependencies": {
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

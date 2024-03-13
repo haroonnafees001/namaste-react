@@ -19,6 +19,8 @@
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(heading);
 
+import React from "react";
+import ReactDOM from "react-dom"
 
 
 const heading = React.createElement(
@@ -26,7 +28,7 @@ const heading = React.createElement(
     [  React.createElement(
         "div",
         {id:'child'},
-        [React.createElement("h1",{},"This is H1 tag")],
+        [React.createElement("h1",{},"Parcel added")],
         [React.createElement("h2",{},"This is H2 tag")],
     )],[  React.createElement(
         "div",
