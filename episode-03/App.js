@@ -42,11 +42,14 @@ const Content = () => (<p className='content'>Lorem ipsum dolor sit amet, consec
 const MainComponent = () => (
     <div>
         <Title/>
+
         <HeadingComponent/>
         <Content/>
     </div>
 
 );
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
 root.render(<MainComponent/>)
