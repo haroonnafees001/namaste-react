@@ -1,0 +1,30 @@
+MONOLITH VS MICROSERVICE
+
+-useEffect hook :
+its a callback function. its will call after the component render. when  the body function is render it as soon as render cycle is finished
+its called after rendering the components.. useEffect render at the end
+-useEffect take two argument one is callback function and other depandency time in array
+   useEffect(()=>{},[])
+-FETCH: is a browser feature to call the api.
+-CORS ORIGIN: browser block the api call if the origin is not same . like call the swiggy/foodpanda api from local its block because of different origin.
+we can bypass this cors origin use allow cors extension in chrome .
+
+-shimmer ui: a fake card which load before render actual date. like linkedin etc.
+-conditional rendering
+
+
+why do we need useState? why state variable is different to local/normal variable?
+normal variable in react is not able to update/change value in runtime on browser page although when console its show the updated value
+but not in rendering. so if you want to render updated one useState came into picture.e:g.
+Syntax
+const [listResturant,setListResturant]=useState(['KFC']) // second param is the function which is responsible to update the value at rendering time.
+you cannot directly update listResturant = 'McDonald' use setsetListResturant('McDonald').
+Behind the scene useState re-render the whole component in which its used. like we use in header component so it re-render whole header component.It will compare
+with old virtual dom with new DOM so its only change the update variable rest is same as it was. Diff algorithm is responsible to compare new DOM and old.
+this process called reconcilation.
+
+
+Virtual dom is the represtation of JXS. Whenever the local state variable change react render the whole component and compare it will previous DOM to new.
+React is very effecient doing dom manipulation.
+
+https://corsproxy.io/? // to resolve corss plugin issue
