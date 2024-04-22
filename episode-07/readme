@@ -1,0 +1,8 @@
+FIND THE ROUTE : Routing in react
+if there is no dependency array in useEffect so its called on every time when component is render.
+if the dependency array is empty = [] => useEffect is called on initial render( just once)
+
+ useEffect(()=>{
+ console.log()
+ },[])
+ 
