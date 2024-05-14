@@ -101,9 +101,7 @@ header
     background: transparent;
 }
 .usericon{
-    position: absolute;
-    right: 30px;
-    top: 30px;
+    float: right;
 }
 .card-container{
     /* border-radius: 10px; */
@@ -221,4 +219,15 @@ header
 
 .m-t-24 {
     margin-top: 24px;
+}
+
+ul{
+    margin-right:0;
+    float: right;
+}
+ul li{
+    text-decoration: none;
+    list-style: none;
+    float: left;
+    margin:10px
 }

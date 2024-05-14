@@ -13,17 +13,17 @@ const Body = () => {
 
     //useEffect:
     useEffect(()=>{
+        console.log('useEffect call')
         fetchData()
-    })
+    },[])
 
     const fetchData = async () =>{
         const data = await fetch(
-            "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6126255&lng=77.04108959999999&page_type=DESKTOP_WEB_LISTING"
+            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6126255&lng=77.04108959999999&page_type=DESKTOP_WEB_LISTING"
         );
         const resJson = await data.json()
-        console.log(resJson)
         const res = resJson?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants.map(res => res.info);
-        console.log(res)
+        console.log(ListOfResturants)
         setListOfResturant(res)
         setFilterResturants(res)
     }
@@ -32,7 +32,7 @@ const Body = () => {
     return ListOfResturants.length < 1 ? (
         <div className="container mt-40">
             {
-                [1, 2, 3, 4, 5,1, 2, 3, 4].map((e,i) => {
+                [1, 2, 3, 4, 5].map((e,i) => {
                     return(
                         <Shimmer key={i}/>
                     );

@@ -5,4 +5,114 @@ if the dependency array is empty = [] => useEffect is called on initial render( 
  useEffect(()=>{
  console.log()
  },[])
- 
+
+
+ Never use 'useState' variable outside component . always use it inside body
+ never use inside  'useState'  if else.. always declare on top of component body.
+
+ ----REACT ROUTING DOM------
+
+ use is the prefix for hooks in react
+
+ useRouteError hook to get error detail on page. and by using this you can create your own custom hook.
+
+ ----childern route----
+ header fixed and body only change.
+ we use outlet component from react route dom. it will help to make our app route dynamically
+ never use href using redirection use link from rect router dom eg: <link to="/about"></link>.
+ if use anchor tag <a> in react so it refresh the page. use <link> so page dont reload /refresh
+ body change only header remain same when use <link> tag. you can see on element section in browser inspect.
+ component change not whole page
+ There are two type of Routing
+ 1-Server side rounting . you make a network and about us page will come form server . like in php
+ 2-Client side rounting . No network call .. also called Single page app
+
+
+
+ import  createBrowserRouter from react-router-dom
+
+ createBrowserRouter take some configuration that configuration is the list.. array of object like .
+  In list , each and every object define a path and element.
+  suppose if path is like path:"/about" so load the element:<About> mean load the about component
+
+ const appRouter = createBrowserRouter([
+ {
+        path:'/home',
+        element:<Home/>
+ },
+ {
+        path:'/about,
+        element:<About/>
+ }
+
+ ])
+
+ ---RouterProvider----
+ its a component, its help us to provide the createBrowserRoute configuturation to root element to render it. like
+ const root = ReactDOM.createRoot(document.getElemnentById("root"))
+
+ root.render(<RouterProvider router={appRouter}>)
+
+ There are other router which react provide like hash router, memory router https://reactrouter.com/en/main/routers/create-browser-router
+ but most of the time we use createBrowserRouter routre/
+
+ ----ROUTE ERROR OR ERROR PAGE---
+
+put errorElement in createBroserRoute config like
+
+const appRouter = createBrowserRouter([
+ {
+        path:'/home',
+        element:<Home/>
+        errorElement:<Error/>
+ },
+ {
+        path:'/about,
+        element:<About/>
+ }
+
+ ])
+
+useRouteError hook in react to provide detail about error.
+USAGE:
+import {useRouteError} from "react-router-dom"
+
+const Error = () => {
+const err = useRouteError();
+console.log(err)
+return (
+    <h1>err.status</h1>
+)
+}
+
+
+------FIXED YOUR HEADER AND MAKE YOUR BODY DYNAMIC -------
+
+In react there is a children property to which we can add children route. like home , about , contact .. and fix the heade footer
+const appRouter = createBrowserRouter([
+ {
+        path:'/home',
+        element:<MainComponent/>
+        errorElement:<Error/>,
+        children:[
+            {
+                    path:'/about,
+                    element:<About/>
+             },
+             {
+                     path:'/contact,
+                     element:<Contact/>
+              },
+        ]
+ },
+
+
+ ])
+
+ ----LINK Aka ahref-----
+
+never ahref in react its refresh whole page.
+a super power given by react-router-dom
+link work same as anchor tag
+<a herf="about">About</a>
+<Link to="about">About</Link>
