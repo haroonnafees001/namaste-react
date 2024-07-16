@@ -6,6 +6,8 @@ import {createBrowserRouter, RouterProvider,Outlet  } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact"
 import Error from "./components/Error"
+import ResturantMenu from "./components/ResturantMenu"
+
 
 const AppLayout = () => {
     return (
@@ -14,9 +16,9 @@ const AppLayout = () => {
             {/**  Outlet will decide now which component call  **/}
             <Outlet/>
 
-            {/** if my path=/ then load <body> component **/}
-            {/** if my path=/about then load <about> component **/}
-            {/** if my path=/contact then load <contact > component **/}
+            {/** if path=/ then load <body> component **/}
+            {/** if path=/about then load <about> component **/}
+            {/** if path=/contact then load <contact > component **/}
 
         </div>
     )
@@ -44,6 +46,10 @@ const appRouter = createBrowserRouter([
                 {
                     path:"/contact",
                     element:<Contact></Contact>
+                },
+                {
+                    path:"/resturants/:resId",
+                    element:<ResturantMenu/>
                 }
             ]
         },

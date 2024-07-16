@@ -221,11 +221,11 @@ header
     margin-top: 24px;
 }
 
-ul{
+header ul{
     margin-right:0;
     float: right;
 }
-ul li{
+header ul li{
     text-decoration: none;
     list-style: none;
     float: left;

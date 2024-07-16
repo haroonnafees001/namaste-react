@@ -1,9 +1,9 @@
 import ResturantCard from "./ResturantCard";
-import resObj from "../../utils/mockData";
 import { useState,useEffect } from "react";
 import Shimmer from "./Shimmer";
+
+import {Link} from "react-router-dom";
 // normall variable
-let listResturant = resObj;
 const Body = () => {
     // second parameter are just need to add set prefix whatever your first param is or use any name but recommended to use first param name with set prefix
     // state variable - superpower variable its maintain the changes in variable throughout the component
@@ -17,13 +17,15 @@ const Body = () => {
         fetchData()
     },[])
 
+
     const fetchData = async () =>{
         const data = await fetch(
             "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6126255&lng=77.04108959999999&page_type=DESKTOP_WEB_LISTING"
         );
         const resJson = await data.json()
+        console.log('pure data',resJson)
+
         const res = resJson?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants.map(res => res.info);
-        console.log(ListOfResturants)
         setListOfResturant(res)
         setFilterResturants(res)
     }
@@ -65,7 +67,7 @@ const Body = () => {
                 //not use index as key in loop like map ,foreach,reduce .. use unique id from api its recommended
                 //always add key attr when listing items . its only render that new item if you are not use key attr then it will re-render the whole list not new one so to re-render the whole list use key attr..
                 //Unique key via api is > then index in loop( least priority)
-                filterResturants.map((res) => <ResturantCard key={res.id} resData={res}/>)
+                filterResturants.map((res) => <Link key={res.id} to={"/resturants/"+res.id}><ResturantCard  resData={res}/></Link> )
             }
         </div>
     )

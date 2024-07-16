@@ -1,6 +1,7 @@
 import {CDN_URL} from "../../utils/constants";
 const ResturantCard = (props) => {
     const { resData } = props;
+    console.log(resData)
     return (
 
         <div className="card-container">

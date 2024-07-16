@@ -116,3 +116,29 @@ a super power given by react-router-dom
 link work same as anchor tag
 <a herf="about">About</a>
 <Link to="about">About</Link>
+behind thi scene link is using anchor tag. link is a wrapper over anchor tag. you dont have to refresh the page as compare to anchor tag.
+react-router-dom provide us Link
+
+-------useParam hook---------
+its a hook of react-router-dom. use to get param data.. e.g: id, product name
+
+
+
+
+HOW LIFE CYCLE WORK
+-PARENT CONSTRUCTOR
+-PARENT RENDER
+
+    -FIRST CONSTRUCTOR
+    -FIRST RENDER
+
+    -SECOND CONSTRUCTOR
+    -SECOND RENDER
+
+
+ <DOM UPDATED - IN SINGLE BATCH>
+    -FIRST CompunentDidMount
+    -SECOND CompunentDidMount
+Parent ComponentDidMount
+
+In React firstly constructor and rendor in first batch either parent or childer. then Dom manipulation happen like computedDidMount called
